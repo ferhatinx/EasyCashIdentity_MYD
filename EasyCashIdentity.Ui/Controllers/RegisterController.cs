@@ -26,15 +26,26 @@ namespace EasyCashIdentity.Ui.Controllers
             {
                 AppUser appUser = new()
                 {
+                    Id=Guid.NewGuid().ToString(),
                     UserName = dto.Username,
                     Email = dto.Email,
                     Surname = dto.Surname,
                     Name = dto.Name,
+                    City="aaaa",
+                    District="aaaa",
+                    ImageUrl="aaaa"
                 };
                 var result = await _userManager.CreateAsync(appUser, dto.Password);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index","ConfirmMail");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
                 }
             }
             return View();

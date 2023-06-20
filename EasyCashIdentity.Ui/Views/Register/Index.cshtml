@@ -37,20 +37,25 @@
 	<h1>EXISTING LOGIN FORM</h1>
 
 	<div class="w3layoutscontaineragileits">
-		<h2>Login here</h2>
-		<form action="#" method="post">
-			<input type="email" Name="Username" placeholder="EMAIL" required="">
-			<input type="password" Name="Password" placeholder="PASSWORD" required="">
+		<h2>Yeni Kayıt</h2>
+		<form method="post">
+			<input type="text" asp-for="Name" placeholder="Adınız.." required="">
+			<input type="text" asp-for="Surname" placeholder="Soyadınız.." required="">
+			<input type="text" asp-for="Username" placeholder="Kullanıcı Adınız..." required="">
+			<input type="email" asp-for="Email" placeholder="Mail adresiniz.." required="">
+			<input type="password" asp-for="Password" placeholder="Şifreniz.." required="">
+			<input type="password" asp-for="ConfirmPassword" placeholder="Şifreniz.." required="">
+			<div asp-validation-summary="All"></div>
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
+					<label for="brand1"><span></span>Beni Hatırla</label>
 					<a href="#">Forgot password?</a>
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="LOGIN">
-				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
+				<input type="submit" value="Kayıt Ol">
+				<p> Anasayfaya Dön <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Easy Dön</a></p>
 				<div class="clear"></div>
 			</div>
 		</form>
@@ -99,7 +104,7 @@
 	<!-- //for register popup -->
 
 	<div class="w3footeragile">
-		<p> &copy; 2017 Existing Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
+		<p> &copy; @DateTime.Now.Year Easy Cash Giriş Paneli Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
 	</div>
 
 

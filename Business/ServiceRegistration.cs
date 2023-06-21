@@ -1,5 +1,6 @@
 ﻿
 
+using Business.Configurations;
 using DataAccess.Concrete;
 using Entitiy.Concrete;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,13 @@ public static class ServiceRegistration
         {
             opt.UseSqlServer(configuration.GetConnectionString("local"));
         });
-        services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<EasyCashContext>();
+        services.AddIdentity<AppUser,AppRole>(opt => { 
+            opt.Password.RequireNonAlphanumeric = false; 
+            opt.Password.RequireDigit = false;    
+            opt.Password.RequireLowercase = false;
+            opt.Password.RequireUppercase = false;
+           
+        
+        }).AddEntityFrameworkStores<EasyCashContext>().AddErrorDescriber<CustomIdentityValidator>();
     }
 }

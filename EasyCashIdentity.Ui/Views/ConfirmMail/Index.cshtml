@@ -1,0 +1,20 @@
+﻿@using EasyCashIdentity.Ui.Models;
+@model ConfirmMailViewModel
+@{
+    Layout = null;
+}
+<link href="~/web/css/bootstrap.css" rel="stylesheet" />
+<div class="container">
+    <form method="post">
+        <h2>Taşınan Mail Adresi: @TempData["Mail"]</h2>
+        <label>Kullanıcı Id Değeri</label>
+        <input type="text" class="form-control" asp-for="Mail" value="@ViewBag.v" />
+        <label> Mail Adresinize Gelen 6 haneli kodu giriniz</label>
+        <input type="text" class="form-control" asp-for="ConfirmCode"/>
+        <br />
+        <button class="btn btn-primary">Hesabı Aktife Et</button>
+    </form>
+
+</div>
+
+

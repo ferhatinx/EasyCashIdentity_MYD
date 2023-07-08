@@ -20,7 +20,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllerRoute("default2", "{controller=Home}/{action=Index}/{id?}"); 
+    endpoints.MapControllerRoute("default2", "{controller=Login}/{action=Index}/{id?}"); 
 
 });
 

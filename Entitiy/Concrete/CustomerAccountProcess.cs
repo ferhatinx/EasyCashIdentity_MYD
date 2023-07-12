@@ -8,5 +8,11 @@ public class CustomerAccountProcess
     public decimal Amount { get; set; }
 
     public DateTime ProcessDate { get; set; }
+
+    public Guid? SenderID { get; set; }
+    public Guid? ReceiverID { get; set; }
+
+    public CustomerAccount SenderCustomer { get; set; }
+    public CustomerAccount ReceiverCustomer { get; set; }
 }
 

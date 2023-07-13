@@ -30,7 +30,7 @@ public class Service<T> : IService<T> where T : class
         return await _repository.GetAllAsync(asNoTracking);
     }
 
-    public async Task<T> GetByIDAsync(string id)
+    public async Task<T> GetByIDAsync(int id)
     {
        return  await _repository.GetByIDAsync(id);
     }

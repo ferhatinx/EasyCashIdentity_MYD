@@ -1,7 +1,11 @@
 ﻿
 
+using Business.Abstract;
+using Business.Concrete;
 using Business.Configurations;
+using DataAccess.Abstract;
 using DataAccess.Concrete;
+using DataAccess.Repositories;
 using Entitiy.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,8 +19,11 @@ public static class ServiceRegistration
     {
         services.AddDbContext<EasyCashContext>(opt =>
         {
+
             opt.UseSqlServer(configuration.GetConnectionString("local"));
+
         });
+
         services.AddIdentity<AppUser,AppRole>(opt => { 
             opt.Password.RequireNonAlphanumeric = false; 
             opt.Password.RequireDigit = false;    
@@ -25,5 +32,8 @@ public static class ServiceRegistration
            
         
         }).AddEntityFrameworkStores<EasyCashContext>().AddErrorDescriber<CustomIdentityValidator>();
+
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<ICustomerAccountProcessService,CustomerAccountProcessManager>();
     }
 }

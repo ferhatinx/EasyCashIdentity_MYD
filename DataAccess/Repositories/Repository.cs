@@ -36,7 +36,7 @@ public class Repository<T> : IRepository<T> where T : class
         
     
 
-    public async Task<T?> GetByIDAsync(string id)
+    public async Task<T?> GetByIDAsync(int id)
     {
         return await Table.FindAsync(id);
     }

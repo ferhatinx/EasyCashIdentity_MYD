@@ -1,7 +1,8 @@
 using Business;
+using DataAccess.Concrete;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDepedency(builder.Configuration);

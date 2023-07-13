@@ -6,8 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete;
 
-public class EasyCashContext : IdentityDbContext<AppUser,AppRole,string>
+public class EasyCashContext : IdentityDbContext<AppUser,AppRole,int>
 {
+  
     public EasyCashContext(DbContextOptions<EasyCashContext> options) : base(options)
     {
 

@@ -11,7 +11,7 @@ public interface IRepository<T>  where T :class
     bool DeleteAsync(T entity);
     bool Update(T entity);
     bool Update(T entity,T unchanged);
-    Task<T> GetByIDAsync(string id);
+    Task<T> GetByIDAsync(int id);
     Task<List<T>> GetAllAsync(bool asNoTracking = true);
     Task<int> SaveChangesAsync();
 

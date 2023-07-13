@@ -29,7 +29,7 @@ namespace EasyCashIdentity.Ui.Controllers
                 Random random = new();
                 AppUser appUser = new()
                 {
-                    Id = Guid.NewGuid().ToString(),
+                 
                     UserName = dto.Username,
                     Email = dto.Email,
                     Surname = dto.Surname,
